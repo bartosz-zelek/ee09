@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styl4.css">
+        <title>Nasza stacja paliw</title>
+
+        <script>
+            function licz(){
+                dystans = parseFloat(document.querySelector("#dystans").value);
+                spalanie = parseFloat(document.querySelector("#spalanie").value);
+                odp = `Potrzebujesz ${dystans*(spalanie/100)} litrów paliwa`;
+                document.querySelector("#odp").innerHTML = odp;
+            }
+        </script>
+    </head>
+    <body>
+        <section id="baner">
+            <h2>Witamy na stacji paliw!</h2>
+        </section>
+        <section id="lewy">
+            <a href="index.html">
+                <img src="home.png"><br>
+            </a>
+            <a href="kalkulacja.html">
+                <img src="znak.png">
+            </a>
+        </section>
+        <section id="prawy">
+            <img src="samochod.png" alt="grafika: samochód">
+        </section>
+        <span style="clear: both;"></span>
+        <section id="glowny">
+            <h2>Oblicz, ile litrów musisz zatankować</h2>
+
+            <label for="dystans">dystans do przejechania w km</label><br>
+            <input type="number" id="dystans"><br>
+
+            <label for="spalanie">spalanie samochodu w l/100km</label><br>
+            <input type="number" id="spalanie"><br>
+
+            <input type="button" value="OBLICZ" onclick="licz()"><br>
+            <span id="odp"></span>
+        </section>
+        <section id="stopka_lewy">
+            <p>Stronę opracował: PESEL</p>
+        </section>
+        <section id="stopka_prawy">
+            <a href="kwerendy.txt" download>Tu pobierzesz zapytania</a>
+        </section>
+    </body>
+</html>
