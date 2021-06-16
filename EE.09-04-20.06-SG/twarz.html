@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styl.css">
+        <title>Usługi kosmetyczne</title>
+
+        <script>
+            function licz(){
+                uslugi = ["piling", "maska", "masaz_twarzy", "regulacja_brwi"];
+                ceny = [45, 30, 20, 5];
+                suma = 0;
+                for (var i=0; i<4; i++){
+                    if (document.querySelector(`#${uslugi[i]}`).checked){
+                        suma += ceny[i];
+                    }
+                }
+                document.querySelector("#suma").innerHTML = `Cena zabiegów: ${suma}`;
+            }
+        </script>
+    </head>
+    <body>
+        <section id="lewy1">
+            <h2>W ofercie</h2>
+            <ul>
+                <li>
+                    <a href="twarz.html">Zabiegi na twarz</a>
+                    <ol>
+                        <li>Piling</li>
+                        <li>Maska</li>
+                        <li>Regulacja brwi</li>
+                    </ol>
+                </li>
+                <li>Masaż</li>
+                <li>Diety oczyszczające</li>
+            </ul>
+            <a href="index.html">Do strony głównej</a>
+        </section>
+        <section id="prawy1">
+            <h2>Salon Kosmetyczny</h2>
+        </section>
+        <section id="prawy2">
+            <h2>Sprawdź cenę swojej wizyty</h2>
+
+            <input type="checkbox" id="piling">
+            <label for="piling">Piling</label>
+            <br>
+            <input type="checkbox" id="maska">
+            <label for="maska">Maska</label>
+            <br>
+            <input type="checkbox" id="masaz_twarzy">
+            <label for="masaz twarzy">Masaż twarzy</label>
+            <br>
+            <input type="checkbox" id="regulacja_brwi">
+            <label for="regulacja brwi">Regulacja brwi</label>
+            <br>
+            <input type="button" value="Sprawdź cenę" onclick="licz()"><br>
+            <span id="suma"></span>
+        </section>
+        <section id="lewy2">
+            <img src="obraz1.jpg" alt="Kosmetyczka">
+        </section>
+        <section id="stopka">
+            <p>Autor: PESEL</p>
+        </section>
+    </body>
+</html>
