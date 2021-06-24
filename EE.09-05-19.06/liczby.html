@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styl2.css">
+        <title>Ciągi liczbowe</title>
+
+        <script>
+            function licz(){
+                var a1 = parseInt(document.getElementById("a1").value);
+                var r = parseInt(document.getElementById("r").value);
+                var n = parseInt(document.getElementById("n").value);
+
+                var str = "";
+
+                for (var i=0; i<n; i++){
+                    if (i != 0)
+                        a1 += r;
+                    str += " " + a1.toString();
+                }
+
+                document.getElementById("wynik").innerHTML = "Ciąg arytmetyczny zawiera wyrazy: " + str;
+            }
+        </script>
+    </head>
+    <body>
+        <section id="baner">
+            <section id="pierwszy">
+                <h2>Poznaj Ciągi Liczbowe</h2>
+            </section>
+            <section id="drugi">
+                <a href="liczby.html">
+                    <h5>Ciągi arytmetyczne</h5>
+                </a>
+            </section>
+            <section id="trzeci">
+                <a href="fib.html">
+                    <h5>Ciąg Fibonacciego</h5>
+                </a>
+            </section>
+            <section id="czwarty">
+                <img src="obraz1.png" alt="Fibonaći">
+            </section>
+        </section>
+        <section id="lewy">
+            <ol>
+                <li>ciągi arytmetyczne</li>
+                <li>ciągi geometryczne</li>
+                <li>ciąg Fibonacciego</li>
+            </ol>
+        </section>
+        <section id="prawy">
+            <h2>Generowanie ciągu arytmetycznego</h2>
+
+            Pierwszy wyraz A1:
+            <input type="number" id="a1">
+            <br>
+            Różnica ciągu R:
+            <input type="number" id="r">
+            <br>
+            Liczba wyrazów w ciągu N:
+            <input type="number" id="n">
+            <br>
+
+            <input type="button" value="Generuj Ciąg" onclick="licz()">
+
+            <div id="wynik"></div>
+        </section>
+        <section id="stopka">
+            <p>Autor: PESEL</p>
+        </section>
+    </body>
+</html>
